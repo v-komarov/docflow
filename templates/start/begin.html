@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <nav class="navbar navbar-dark navbar-light bg-dark navbar-expand-sm">
+
+        <a class="navbar-brand" href="#">DocFlow</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Входящие</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Исходящие</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/exit">Выход</a>
+                </li>
+            </ul>
+    </nav>
+
+
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Вы зарегистрированя как:</h4>
+    <p>{{ fio }}</p>
+    <p>Телефон: {{ phone }}</p>
+    <p>email: {{ email }}</p>
+  <hr>
+  <p class="mb-0">Порядок работы в модуле регламентирован приказом ...</p>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

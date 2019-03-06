@@ -56,7 +56,7 @@ ROOT_URLCONF = 'docflow.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,6 +64,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.csrf',
+                'django.template.context_processors.static',
+
             ],
         },
     },
@@ -77,6 +80,7 @@ WSGI_APPLICATION = 'docflow.wsgi.application'
 
 import docflow.dbconn
 
+DATABASES = docflow.dbconn.DATABASES
 
 
 # Password validation
@@ -103,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Krasnoyarsk'
 
 USE_I18N = True
 
@@ -115,4 +119,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'http://10.6.3.54:8090/'
+
+AUTHSERVICE = '10.6.0.22:8000/begin/jsondata/'
